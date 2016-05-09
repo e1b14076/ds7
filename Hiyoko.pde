@@ -12,10 +12,10 @@ class Hiyoko extends AbstractKoma {
 
     return false;
   }
-    void updatePos(int toX, int toY) {
-    if(this.team==0 && toX==board.bArea.posX+board.bArea.yoko-1){
+  void updatePos(int toX, int toY) {
+    if(this.team==0 && toX==board.bArea.posX+board.bArea.yoko-1 && !this.kStat.captured){
       komaList.promote(this,toX,toY);
-    }else if(this.team==1 && toX==board.bArea.posX){
+    }else if(this.team==1 && toX==board.bArea.posX && !this.kStat.captured){
       komaList.promote(this,toX,toY);
     }
     super.updatePos(toX,toY);
